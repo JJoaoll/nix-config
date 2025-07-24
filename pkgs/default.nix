@@ -26,8 +26,6 @@
     vscode
 
     git
-    vesktop
-
     #xorg.xmodmap xorg.xkbcomp
     pomodoro-gtk
     #kbd

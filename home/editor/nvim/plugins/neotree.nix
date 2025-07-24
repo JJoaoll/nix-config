@@ -25,11 +25,11 @@
         '';
     }
   ];
-  
-  extraLuaConfig = ''
-    vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
-    vim.keymap.set('n', '<leader>n', ':Neotree filesystem close left<CR>', {})
-  '';
+  #TODO: SOLVE THIS
+  # extraLuaConfig = ''
+  #   vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+  #   vim.keymap.set('n', '<leader>n', ':Neotree filesystem close left<CR>', {})
+  # '';
 
   };
 }

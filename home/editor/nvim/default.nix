@@ -28,7 +28,10 @@
     ];
 
 
+    #TODO: remove these two last lines
+
     extraLuaConfig = ''
+
     vim.opt.tabstop = 2          
     vim.opt.softtabstop = 2     
     vim.opt.shiftwidth = 2     
@@ -132,11 +135,10 @@
     o.foldcolumn     = "0"
     o.foldtext       = ""
 
-
-
-    --vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
-    --vim.keymap.set('n', '<leader>n', ':Neotree filesystem close left<CR>', {})
+    vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+    vim.keymap.set('n', '<leader>n', ':Neotree filesystem close left<CR>', {})
     '';
+
 
   };
 

@@ -167,6 +167,8 @@
     lightdm-gtk-greeter  # Greeter GTK padrão
     # lightdm-webkit2-greeter  # Greeter WebKit2 (temas modernos)
 
+    #HACK: AUDIO STUFF
+    dunst libnotify
     pulseaudio
     alsa-utils
   ];

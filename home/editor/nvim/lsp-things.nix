@@ -239,8 +239,6 @@ in {
     ];
 
     extraLuaConfig = ''
-      vim.g.mapleader = " "
-      vim.g.maplocalleader = " "
       
       vim.opt.conceallevel = 2
       vim.api.nvim_set_hl(0, "@operator", { link = "Operator" })

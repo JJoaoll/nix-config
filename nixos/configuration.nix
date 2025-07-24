@@ -10,6 +10,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../pkgs
+      ./keyboard
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -109,6 +110,33 @@
 
   #  wget
   ];
+
+  # NVIDIA drivers
+  # -----------------------------------------------------------------
+  hardware.nvidia = {
+    open                   = false; # Use proprietary closed-source kernel modules
+    modesetting.enable     = true;
+    powerManagement.enable = true;
+    nvidiaSettings         = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  # -----------------------------------------------------------------
+
+  # Gaming Compatibility
+  # -----------------------------------------------------------------
+  hardware.graphics = { 
+   enable32Bit = true;
+    extraPackages32 = with pkgs; [ 
+      libva 
+      pkgsi686Linux.libvdpau
+      pkgsi686Linux.mesa
+    ];
+    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+  };
+
+  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.daemon.enable = true;
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

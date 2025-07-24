@@ -5,7 +5,7 @@
     ./keyboard
     ./programs
     ./shell
-    ./xmonad
+    # ./xmonad
   ];
 
   home = {

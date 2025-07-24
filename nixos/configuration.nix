@@ -149,7 +149,8 @@
     enable = true;
     extraPackages = with pkgs; [
       dmenu    # lançador de aplicativos padrão do i3
-      i3status # barra de status simples
+      i3status
+      polybar polybarFull
       i3-volume
       i3lock   # bloqueador de tela
       i3blocks # barra de status alternativa
@@ -177,9 +178,6 @@
     dunst libnotify
     pulseaudio
     alsa-utils
-
-    #TODO: move it 
-    polybar polybarFull
   ];
 
 

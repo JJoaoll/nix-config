@@ -111,6 +111,10 @@
   #  wget
   ];
 
+
+
+
+
   # NVIDIA drivers
   # -----------------------------------------------------------------
   hardware.nvidia = {
@@ -121,21 +125,25 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   # -----------------------------------------------------------------
-
   # Gaming Compatibility
   # -----------------------------------------------------------------
-  hardware.graphics = { 
+
+  hardware.graphics = {
    enable32Bit = true;
-    extraPackages32 = with pkgs; [ 
-      libva 
+    extraPackages32 = with pkgs; [
+      libva
       pkgsi686Linux.libvdpau
       pkgsi686Linux.mesa
     ];
+
     extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 
   hardware.opentabletdriver.enable = true;
   hardware.opentabletdriver.daemon.enable = true;
+  # -----------------------------------------------------------------
+
+
   
 
   # Some programs need SUID wrappers, can be configured further or are

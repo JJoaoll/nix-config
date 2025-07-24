@@ -5,7 +5,7 @@
     ./keyboard
     ./programs
     ./shell
-    # ./i3
+    ./i3
   ];
 
   home = {

@@ -150,6 +150,7 @@
     extraPackages = with pkgs; [
       dmenu    # lançador de aplicativos padrão do i3
       i3status # barra de status simples
+      i3-volume
       i3lock   # bloqueador de tela
       i3blocks # barra de status alternativa
     ];
@@ -165,12 +166,20 @@
 
     lightdm
     lightdm-gtk-greeter  # Greeter GTK padrão
+    # TODO: setup the picom
+    # to enable things like 
+    # transparent windows
+    # picom
+    #WARN: error :P
     # lightdm-webkit2-greeter  # Greeter WebKit2 (temas modernos)
 
     #HACK: AUDIO STUFF
     dunst libnotify
     pulseaudio
     alsa-utils
+
+    #TODO: move it 
+    polybar polybarFull
   ];
 
 

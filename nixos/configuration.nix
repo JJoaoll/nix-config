@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 
 {
@@ -47,14 +47,6 @@
     LC_TELEPHONE = "pt_BR.UTF-8";
     LC_TIME = "pt_BR.UTF-8";
   };
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -111,14 +103,33 @@
   #  wget
   ];
 
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      swtpm.enable = true;  # For Windows VMs (optional)
+      ovmf.enable  = true;   # For UEFI support (optional)
+    };
+  };
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATH = "${pkgs.gamescope}/bin";
+    GDK_BACKEND = "x11";
+  };
 
 
+
+  system.autoUpgrade.enable = true;
+  # system.autoUpgrade.allowReboot = true;
+  services.flatpak.enable = true;
+  # Enable XDG Desktop Portals
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 
   # NVIDIA drivers
   # -----------------------------------------------------------------
   hardware.nvidia = {
-    open                   = false; # Use proprietary closed-source kernel modules
+    open                   = false;
     modesetting.enable     = true;
     powerManagement.enable = true;
     nvidiaSettings         = true;
@@ -144,6 +155,38 @@
   # -----------------------------------------------------------------
 
 
+
+
+
+  programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+
+  services = {
+    displayManager = {
+      sddm.enable = true;
+      sddm.wayland.enable = false;
+    };
+
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      inputClassSections = [
+        ''
+          Identifier "IgnoreTablet"
+          MatchIsTablet "on"
+          MatchVendor "Wacom|Huion|Gaomon"
+          Option "Ignore" "on"
+        ''
+      ];
+
+      desktopManager.plasma6.enable = true;
+      desktopManager.gnome.enable = true;
+    };
+  };
+
+  # Define que queremos X11
+  environment.sessionVariables = {
+    XDG_SESSION_TYPE = "x11";
+  };
   
 
   # Some programs need SUID wrappers, can be configured further or are

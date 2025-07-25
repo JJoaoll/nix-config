@@ -1,3 +1,4 @@
+-- WARNING: some problema about lsp
 return {
 	{
 		"williamboman/mason.nvim",
@@ -47,7 +48,7 @@ return {
       })
 
       -- Outro LSP's:
-      lspconfig.gopls.setup({})
+      -- lspconfig.gopls.setup({})
       lspconfig.jdtls.setup({})
       lspconfig.lua_ls.setup({})
       --lspconfig.tsserver.setup({})

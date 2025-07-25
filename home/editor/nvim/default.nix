@@ -18,7 +18,6 @@
     plugins = with pkgs.vimPlugins; [
 
       nvim-web-devicons
-
       
       nvim-lspconfig 
 
@@ -29,12 +28,14 @@
     ];
 
 
+    #TODO: remove these two last lines
+
     extraLuaConfig = ''
+
     vim.opt.tabstop = 2          
     vim.opt.softtabstop = 2     
     vim.opt.shiftwidth = 2     
     vim.opt.expandtab = true  
-    vim.opt.smartindent = tru
     vim.opt.autoindent = true
    
     vim.api.nvim_create_autocmd("FileType", {
@@ -133,7 +134,11 @@
     -- Folds
     o.foldcolumn     = "0"
     o.foldtext       = ""
+
+    vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+    vim.keymap.set('n', '<leader>n', ':Neotree filesystem close left<CR>', {})
     '';
+
 
   };
 

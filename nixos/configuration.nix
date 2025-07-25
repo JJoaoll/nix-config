@@ -145,16 +145,52 @@
   hardware.opentabletdriver.daemon.enable = true;
   # -----------------------------------------------------------------
 
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu    # lançador de aplicativos padrão do i3
+      i3status
+      polybar polybarFull
+      i3-volume
+      i3lock   # bloqueador de tela
+      i3blocks # barra de status alternativa
+    ];
+  };
+
+
+  # Pacotes úteis para i3 (adicione ao environment.systemPackages)
+  environment.systemPackages = with pkgs; [
+    rofi # alternativa ao dmenu
+    feh # para gerenciar papel de parede
+    arandr # para gerenciar monitores
+    picom # compositor para efeitos visuais
+
+    lightdm
+    lightdm-gtk-greeter  # Greeter GTK padrão
+    # TODO: setup the picom
+    # to enable things like 
+    # transparent windows
+    # picom
+    #WARN: error :P
+    # lightdm-webkit2-greeter  # Greeter WebKit2 (temas modernos)
+
+    #HACK: AUDIO STUFF
+    dunst libnotify
+    pulseaudio
+    alsa-utils
+  ];
 
 
 
-
-  programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
 
   services = {
     displayManager = {
-      sddm.enable = true;
+      sddm.enable = false;
       sddm.wayland.enable = false;
+
+
+      defaultSession = "none+i3";  # Define i3 como sessão padrão
     };
 
     xserver = {
@@ -169,8 +205,18 @@
         ''
       ];
 
-      desktopManager.plasma6.enable = true;
+      desktopManager.plasma6.enable = false;
       desktopManager.gnome.enable = true;
+      displayManager = {
+
+        lightdm = {
+          enable = true;
+          greeters.gtk.enable = true;  # Habilita o greeter GTK (padrão)
+          # Opcional: Use um tema personalizado (ex: "tema-arc")
+          # greeters.gtk.theme.name = "Arc";
+        };
+
+      };
     };
   };
 

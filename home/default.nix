@@ -6,6 +6,7 @@
     ./programs
     ./shell
     ./i3
+    ./xmonad
   ];
 
   home = {

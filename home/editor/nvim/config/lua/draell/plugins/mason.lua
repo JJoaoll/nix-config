@@ -1,4 +1,3 @@
--- WARNING: some problema about lsp
 return {
 	{
 		"williamboman/mason.nvim",
@@ -18,7 +17,9 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "jdtls"},
+        -- ERROR: lua_ls is having some problems
+        -- TODO: Have a lua lsp
+				ensure_installed = {"jdtls"},
 			})
 		end,
 	},
@@ -48,13 +49,9 @@ return {
       })
 
       -- Outro LSP's:
-      -- lspconfig.gopls.setup({})
       lspconfig.jdtls.setup({})
-      lspconfig.lua_ls.setup({})
       --lspconfig.tsserver.setup({})
-      lspconfig.gleam.setup({})
       lspconfig.rust_analyzer.setup({})
-      lspconfig.clangd.setup({})
 
       -- Defina o Agda Language Server como uma configuração personalizada
       --lspconfig.agda_language_server = {

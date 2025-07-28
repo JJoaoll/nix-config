@@ -9,9 +9,23 @@
 
     kdePackages.kdenlive libsForQt5.kdenlive
 
+    # alsa-lib #TODO: Movo to xmonad. its a dependency!
+
+    #NOTE: Prints: 
+    flameshot xclip
+    vesktop
+
     kmonad 
     xterm dmenu
     evtest
+    # NOTE: XMONAD BEGIN
+    xorg.libX11    # Para X11
+    zlib           # Para zlib
+    pkg-config     # Para ajudar o Cabal a encontrar as libs
+    # NOTE: XMONAD END
+
+    #NOTE: i3 thing 
+    nitrogen rofi picom #TODO: Blue no picom
 
     # Terminal 
     #im-config
@@ -21,9 +35,9 @@
     yazi
 
     atool
-    neovim xclip lua-language-server
+    neovim xclip lua-language-server cargo
     emacs ripgrep fd clang ispell jansson cmake binutils gnumake libvterm libtool
-    vscode
+    vscode curl
 
     git
     #xorg.xmodmap xorg.xkbcomp

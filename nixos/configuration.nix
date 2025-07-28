@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ../pkgs
       ./keyboard
+      ./xmonad
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -58,13 +59,13 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  # services.pulseaudio.enable = true;
+  # security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
+  #   pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -73,7 +74,9 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  # users.extraUsers.jjoaoll.extraGroups = ["audio" "pipewire"];
+
+  # Enable touchpad support (enabled Refault in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -220,9 +223,25 @@
     };
   };
 
+  # mouse 
+  # TODO: Doesnt look like its working..
+  # ERROR: Itsnt working!
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";  
+      accelSpeed = "0";       
+      transformationMatrix = "4 0 0 0 4 0 0 0 1";
+    };
+  };
+  
+
   # Define que queremos X11
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "x11";
+    # PATH = [ 
+    #  "$HOME/.cargo/bin" 
+    # ];
   };
   
 

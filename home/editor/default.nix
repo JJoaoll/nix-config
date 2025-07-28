@@ -4,6 +4,6 @@
     # ./emacs.nix
     # ./nano.nix
     ./nvim
-    # ./vscode.nix
+    # ./vscode # NOTE: REF
   ];
 }

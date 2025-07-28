@@ -2,7 +2,7 @@
 
   imports = [
     ./git.nix
-    ./vesktop.nix
+    # ./vesktop.nix
   ];
 
 }

@@ -2,7 +2,6 @@
 
 let 
   nvim_dir_config = "/etc/nixos/home/editor/nvim/config";
-
 in {
   programs.neovim = {
     enable = true;
@@ -11,5 +10,8 @@ in {
       dofile("${nvim_dir_config}/init.lua")
     '';
   };
+
+
+
 
 }

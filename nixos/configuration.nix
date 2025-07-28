@@ -53,7 +53,7 @@
   users.users.jjoaoll = {
     isNormalUser = true;
     description = "João Lucas de Moraes Pereira";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
     packages = with pkgs; [];
   };
 

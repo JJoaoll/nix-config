@@ -10,14 +10,14 @@
 
     xserver = {
       enable = true;
-      # videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "nvidia" ];
       # TODO: tablet
 
       # desktioManager.plasma6.enable = false;
 
       displayManager.lightdm = {
         enable = true;
-	greeters.gtk.enable = true;
+        greeters.gtk.enable = true;
       };
 
       windowManager.i3 = {
@@ -33,10 +33,8 @@
         ];
       };
     };
-  
-  # environment.sessionVariables = {
-  #   XDG_SESSION_TYPE = "X11";
-  #
-  # };
+
   };
+
 }
+

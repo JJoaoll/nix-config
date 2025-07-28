@@ -9,6 +9,8 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      wireplumber.enable = true;
+      jack.enable = true;  # Opcional, só se precisar de JACK
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
   
@@ -17,10 +19,14 @@
       #media-session.enable = true;
     };
 
+
+  users.users.jjoaoll.extraGroups = [ "audio" "pipewire" ];
+
   environment.systemPackages = with pkgs; [
     pamixer       
     pulseaudio-ctl
     wireplumber   
+    pavucontrol 
   ];
 
 

@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [ 
 
     kdePackages.kdenlive libsForQt5.kdenlive
+    discord
 
     kmonad 
     xterm dmenu

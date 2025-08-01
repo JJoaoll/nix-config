@@ -1,8 +1,37 @@
-{ ... }: {
+{ config, pkgs, lib, ... }: 
+
+let 
+  myUser = "jjoaoll";
+  unicodeComposeFiles = [
+    ./.unicodef/emoji.XCompose
+    ./.unicodef/fonts.XCompose
+    ./.unicodef/games.XCompose
+    ./.unicodef/greek.XCompose
+    ./.unicodef/lang.XCompose
+    ./.unicodef/math.XCompose
+    ./.unicodef/misc.XCompose
+    ./.unicodef/thatex.XCompose
+  ];
+
+  combinedUnicodeComposeContent = lib.concatStringsSep "\n" (
+    lib.map builtins.readFile unicodeComposeFiles
+  );
+
+  baseXComposeContent = ''
+    include "%L"
+  '';
+
+  finalXComposeContent = "${baseXComposeContent}\n${combinedUnicodeComposeContent}";
+
+  combinedXComposeFile = pkgs.writeText "my-combined-xcompose" finalXComposeContent;
+
+in {
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+    options = "compose:ralt";  
   };
 
   services.kmonad = {
@@ -15,8 +44,16 @@
 
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "x11";
+    XCOMPOSEFILE = "${config.users.users.${myUser}.home}/.XCompose"; 
   };
 
+  system.activationScripts.copyXCompose = ''
+    rm -rf ${config.users.users.${myUser}.home}/.unicodef
+    rm -f ${config.users.users.${myUser}.home}/.XCompose
 
+    cp ${combinedXComposeFile} ${config.users.users.${myUser}.home}/.XCompose
+
+    chown -R ${myUser}:${config.users.users.${myUser}.group} ${config.users.users.${myUser}.home}/.XCompose
+  '';
 }
 

@@ -11,6 +11,7 @@
     beamMinimal27Packages.elixir_1_17
     beamMinimal27Packages.elixir
     beamMinimal27Packages.elixir-ls
+    vscode-extensions.elixir-lsp.vscode-elixir-ls
     postgresql
 
     osu-lazer-bin

@@ -8,6 +8,13 @@
   # -----------------------------------------------------------------
   environment.systemPackages = with pkgs; [ 
 
+    beamMinimal27Packages.elixir_1_17
+    beamMinimal27Packages.elixir
+    beamMinimal27Packages.elixir-ls
+    postgresql
+
+    osu-lazer-bin
+
     kdePackages.kdenlive libsForQt5.kdenlive
     discord
 
@@ -34,6 +41,7 @@
     tree-sitter
 
     # Programming Languages
+    erlang rebar3 erlfmt
     gcc
     elan z3
     python3
@@ -58,7 +66,13 @@
     xprintidle-ng
     pkg-config
 
-    nodejs yarn pnpm
+    elixir_1_16
+    erlang_26
+    nodejs_20 
+    inotify-tools
+    # gleam
+    # purescript spago psc-package #purescript
+    nodejs yarn pnpm postman nodemon
     #docker-compose
     
     gnome-tweaks

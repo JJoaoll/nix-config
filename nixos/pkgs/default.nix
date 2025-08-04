@@ -74,7 +74,8 @@
     # gleam
     # purescript spago psc-package #purescript
     nodejs yarn pnpm postman nodemon
-    #docker-compose
+    # docker
+    # docker-compose
     
     gnome-tweaks
     gnome-browser-connector

@@ -2,7 +2,7 @@
 
 #TODO: DO! O audio nao ta integrado com nd!
 
-  services.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
@@ -10,7 +10,8 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       wireplumber.enable = true;
-      jack.enable = true;  # Opcional, só se precisar de JACK
+      jack.enable = true;
+
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
   
@@ -20,14 +21,30 @@
     };
 
 
-  users.users.jjoaoll.extraGroups = [ "audio" "pipewire" ];
+  users.users.jjoaoll.extraGroups = [ "audio" "pipewire" "realtime" ];
 
   environment.systemPackages = with pkgs; [
     pamixer       
     pulseaudio-ctl
     wireplumber   
     pavucontrol 
+
+    easyeffects
+
+    rnnoise
+    rnnoise-plugin
+    speech-denoiser
+
+    calf
+    lsp-plugins
+
+    adwaita-icon-theme
+    xdg-desktop-portal-gtk
   ];
+
+
+
+
 
 
 

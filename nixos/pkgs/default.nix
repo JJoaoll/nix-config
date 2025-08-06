@@ -8,6 +8,8 @@
   # -----------------------------------------------------------------
   environment.systemPackages = with pkgs; [ 
 
+    exercism
+
     beamMinimal27Packages.elixir_1_17
     beamMinimal27Packages.elixir
     beamMinimal27Packages.elixir-ls
@@ -16,7 +18,8 @@
 
     osu-lazer-bin
 
-    kdePackages.kdenlive libsForQt5.kdenlive
+
+    kdePackages.kdenlive libsForQt5.kdenlive 
     discord
 
     kmonad 

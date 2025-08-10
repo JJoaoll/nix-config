@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [ 
 
     exercism
+    elmPackages.elm
 
     beamMinimal27Packages.elixir_1_17
     beamMinimal27Packages.elixir
@@ -98,6 +99,12 @@
     # STREAMING
     obs-studio
   ]; 
+
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_16; 
+  };
 
   fonts = {
     fontDir.enable = true;

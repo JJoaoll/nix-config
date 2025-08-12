@@ -8,9 +8,11 @@
   # -----------------------------------------------------------------
   environment.systemPackages = with pkgs; [ 
 
+    # am i using this?
     exercism
     elmPackages.elm
 
+    insomnia
     beamMinimal27Packages.elixir_1_17
     beamMinimal27Packages.elixir
     beamMinimal27Packages.elixir-ls
@@ -77,7 +79,7 @@
     inotify-tools
     # gleam
     # purescript spago psc-package #purescript
-    nodejs yarn pnpm postman nodemon
+    nodejs yarn pnpm nodemon # postman
     # docker
     # docker-compose
     

@@ -12,6 +12,10 @@
     exercism
     elmPackages.elm
 
+    gleam
+    vscode-extensions.gleam.gleam
+    vimPlugins.nvim-treesitter-parsers.gleam
+
     insomnia
     beamMinimal27Packages.elixir_1_17
     beamMinimal27Packages.elixir

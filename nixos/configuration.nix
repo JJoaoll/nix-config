@@ -70,14 +70,24 @@
       GDK_BACKEND = "x11";
     };
   
+    # GTK THINGS
+    services.xserver.desktopManager.gnome.enable = true;
+    programs.dconf.enable = true;
+    services.dbus.packages = [ pkgs.at-spi2-core ];
+
+    services.flatpak.enable = true;
+    xdg.portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+    # GTK THINGS
   
   
     system.autoUpgrade.enable = true;
     # system.autoUpgrade.allowReboot = true;
-    # services.flatpak.enable = true;
-    # Enable XDG Desktop Portals
-    # xdg.portal.enable = true;
-    # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+
+
   
   
     # NVIDIA drivers

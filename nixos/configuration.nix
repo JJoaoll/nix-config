@@ -76,10 +76,27 @@
     services.dbus.packages = [ pkgs.at-spi2-core ];
 
     services.flatpak.enable = true;
+    #https://nixos.wiki/wiki/Flatpak
+    systemd.services.flatpak-repo = {
+       wantedBy = [ "multi-user.target" ];
+       path = [ pkgs.flatpak ];
+       script = ''
+         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+       '';
+     };
     xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = with pkgs; [ 
+        xdg-desktop-portal-gtk
+      ];
     };
+    environment.systemPackages = with pkgs; [
+        flatpak
+        flatpak-builder
+        gnome-software
+        appstream
+        appstream-glib
+    ];
     # GTK THINGS
   
   

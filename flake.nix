@@ -19,14 +19,17 @@
         modules = [
           ./nixos/configuration.nix
 
-         home-manager.nixosModules.home-manager
-         {
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
+        home-manager.nixosModules.home-manager
+          {
+            home-manager = {  
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-           home-manager.users.jjoaoll = import ./home;
-           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-         }
+              extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };
+
+              users.jjoaoll = import ./home;
+            };
+          }
         ];
       };
     };

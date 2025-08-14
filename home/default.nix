@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, inputs, system, ...}: {
 
   imports = [
     ./editor
@@ -6,6 +6,10 @@
     ./programs
     ./shell
     ./i3
+  ];
+
+  home.packages = with pkgs; [
+    inputs.zen-browser.packages."${system}".default
   ];
 
   home = {

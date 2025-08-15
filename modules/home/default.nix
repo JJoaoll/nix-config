@@ -1,7 +1,7 @@
 { config, pkgs, inputs, system, ...}: {
 
   imports = [
-    ./editor
+    # ./editor
     ./keyboard
     ./programs
     ./shell

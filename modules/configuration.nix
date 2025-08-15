@@ -12,6 +12,7 @@
       ./pkgs
       ./i3
       ./keyboard
+      ./nvim
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

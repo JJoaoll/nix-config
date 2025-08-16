@@ -21,7 +21,7 @@
 
     settings = {
       # background_image = "/home/draell/Pictures/pixelart1.png"; # Substitua pelo caminho real da imagem
-      background_opacity = "0.8"; # Opcional: ajusta a transparência da imagem (0.0 a 1.0)
+      # background_opacity = "0.8"; # Opcional: ajusta a transparência da imagem (0.0 a 1.0)
       # background_image_layout = "scaled"; # Opcional: define o layout (scaled, tiled, centered, etc.)
 
       close_on_child_death = true;

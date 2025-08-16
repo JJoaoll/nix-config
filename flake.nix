@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    xmonad-contrib.url = "github:xmonad/xmonad-contrib";
+
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,9 +19,9 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, zen-browser, nvf, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, xmonad-contrib, ... }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
 
@@ -37,6 +39,8 @@
               users.jjoaoll = import ./modules/home;
             };
           }
+        ] ++ xmonad-contrib.nixosModules ++ [
+          xmonad-contrib.modernise.${system}
         ];
       };
     };

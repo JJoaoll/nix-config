@@ -11,6 +11,7 @@
       ./audio
       ./pkgs
       ./i3
+      ./xmonad
       ./keyboard
       ./nvim
     ];

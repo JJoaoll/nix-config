@@ -7,12 +7,13 @@
     inactiveOpacity = 0.9;
     activeOpacity = 1.0;
     
+    #TODO: readjust it, maybe?
     opacityRules = [
-      "80:class_g = 'kitty' && focused"
-      "70:class_g = 'kitty' && !focused"
-      "80:class_g = 'Code'"
-      "85:class_g = 'firefox' && !focused"
-      "90:class_g = 'firefox' && focused"
+      # "80:class_g = 'kitty' && focused"
+      # "70:class_g = 'kitty' && !focused"
+      # "80:class_g = 'Code'"
+      # "85:class_g = 'firefox' && !focused"
+      # "90:class_g = 'firefox' && focused"
     ];
     
     settings = {

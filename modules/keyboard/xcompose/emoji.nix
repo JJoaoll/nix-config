@@ -113,6 +113,8 @@
   { out = "🏆"; seq = "trofeu";      }
   { out = "🐍"; seq = "snake";       }
   { out = "🔥"; seq = "fire";        }
+  { out = "🤓"; seq = "nerd";        }
+
 
   { out ="😗🎶";seq = "inno";        }
 

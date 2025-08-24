@@ -19,6 +19,8 @@
   { out = "👌"; seq = "pft";         }
   { out = "👌"; seq = "perfect";     }
   { out = "👌"; seq = "pft";         }
+  { out = "🤌"; seq = "mammamia";    }
+  { out = "🤌"; seq = "mamamia";     }
   { out = "🤌"; seq = "coxinha";     }
   { out = "🍿"; seq = "popcorn";     }
   { out = "👆"; seq = "pointup";     }

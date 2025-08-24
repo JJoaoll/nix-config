@@ -19,6 +19,19 @@
           enable = true;
         };
 
+        diagnostics = {
+          enable = true;
+          config = {
+            signs = true;
+            # update_in_insert = true;
+            # virtual_lines = true;
+            virtual_text = true;
+
+          };
+          nvim-lint.lint_after_save = true;
+
+        };
+
         options = {
           cursorline = true;
           encoding = "UTF-8";

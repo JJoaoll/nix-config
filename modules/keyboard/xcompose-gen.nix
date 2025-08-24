@@ -108,7 +108,7 @@ let
             (map (adapt xcompose_k_reprs))
             (map (adapt xcompose_k_greek_reprs))
             (map (adapt xcompose_v_reprs))
-            (map (c: "<" + c + ">")) 
+            (map (k: "<" + k + ">")) 
             lib.strings.concatStrings
           ]; 
     in 

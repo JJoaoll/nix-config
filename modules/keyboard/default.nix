@@ -1,9 +1,13 @@
 { config, pkgs, lib, ... }: 
 
 let 
+
+  gen = import ./xcompose/gen.nix;
+  emoji_file = import ./xcompose/emoji.nix;
+  emoji_keys = gen {keymaps = emoji_file; inherit lib;};
   myUser = "jjoaoll";
   unicodeComposeFiles = [
-    ./.unicodef/emoji.XCompose
+    # ./.unicodef/emoji.XCompose
     ./.unicodef/fonts.XCompose
     ./.unicodef/games.XCompose
     ./.unicodef/greek.XCompose
@@ -13,9 +17,9 @@ let
     ./.unicodef/thatex.XCompose
   ];
 
-  combinedUnicodeComposeContent = lib.concatStringsSep "\n" (
+  combinedUnicodeComposeContent = lib.concatLines (
     lib.map builtins.readFile unicodeComposeFiles
-  );
+  ) + emoji_keys;
 
   baseXComposeContent = ''
     include "%L"

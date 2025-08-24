@@ -90,6 +90,7 @@
   { out = "😡"; seq = "angry";       }
   { out = "🤬"; seq = "rage";        }
   { out = "💀"; seq = "skull";       }
+  { out = "💀"; seq = "dead";        }
   { out = "👽"; seq = "alien";       }
   { out = "🤖"; seq = "robot";       }
   { out = "🤡"; seq = "clown";       }

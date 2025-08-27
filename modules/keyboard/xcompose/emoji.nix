@@ -72,6 +72,7 @@
   { out = "🫠"; seq = "derretendo";  }
   { out = "😀"; seq = ":)";          }
   { out = "😄"; seq = ":D";          }
+  { out = "🤣"; seq = "xD";          }
   { out = "🤣"; seq = "XD";          }
   { out = "😂"; seq = "laught";      }
   { out = "😂"; seq = "funny";       }

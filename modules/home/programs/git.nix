@@ -5,6 +5,13 @@
 
     userName = "JJoaoll";
     userEmail= "joaoduos@gmail.com";
+
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
+
   };
 
 

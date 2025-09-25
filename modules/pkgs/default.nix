@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, nixpkgs-unstable, ... }: {
+
+  imports = [
+    ./unstable-pkgs.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -23,7 +27,9 @@
     vscode-extensions.elixir-lsp.vscode-elixir-ls
     postgresql
 
-    osu-lazer-bin
+    # osu-lazer
+    # osu-lazer-bin
+    # nixpkgs-unstable.osu-lazer-bin
 
 
     kdePackages.kdenlive libsForQt5.kdenlive 
@@ -56,9 +62,6 @@
     gcc
     elan z3
     python3
-    haskellPackages.ghc       
-    haskellPackages.cabal-install
-    haskellPackages.haskell-language-server 
     (haskellPackages.ghcWithPackages (p:
        
        with p; [

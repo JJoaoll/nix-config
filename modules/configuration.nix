@@ -13,6 +13,8 @@
       ./i3
       ./keyboard
       ./nvim
+
+      ./cosmic
     ];
 
   nixpkgs.config.allowUnfree = true;

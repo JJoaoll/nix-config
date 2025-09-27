@@ -14,7 +14,7 @@
       ./keyboard
       ./nvim
 
-      ./cosmic
+      # ./cosmic -- not running
     ];
 
   nixpkgs.config.allowUnfree = true;

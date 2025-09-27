@@ -5,7 +5,7 @@
       sddm.enable = false;
      # sddm.wayland = false;
 
-      defaultSession = "none+i3"; 
+      defaultSession = "none+i3";
     };
 
     xserver = {

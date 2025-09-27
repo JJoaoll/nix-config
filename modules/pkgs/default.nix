@@ -49,7 +49,8 @@
     atool
     neovim xclip lua-language-server
     emacs ripgrep fd clang ispell jansson cmake binutils gnumake libvterm libtool
-    vscode
+    vscode 
+    nixpkgs-fmt nixd direnv  
 
     git
     #xorg.xmodmap xorg.xkbcomp

@@ -12,6 +12,8 @@
   # -----------------------------------------------------------------
   environment.systemPackages = with pkgs; [ 
 
+    agda
+
     # am i using this?
     exercism
     elmPackages.elm

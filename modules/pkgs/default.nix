@@ -13,8 +13,9 @@
   environment.systemPackages = with pkgs; [ 
     
 
-    ocaml opam
-    pkg-config
+    # deus me dibre
+    # ocaml opam 
+    # ocamlPackages.utop
 
     # am i using this?
     exercism

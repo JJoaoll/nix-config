@@ -13,16 +13,8 @@
   environment.systemPackages = with pkgs; [ 
     
 
-    # ROCQ
-    coq
-    gcc
-    gnumake
     ocaml opam
     pkg-config
-    gcc
-    bintools-unwrapped
-    gmp
-    rocq-core
 
     # am i using this?
     exercism

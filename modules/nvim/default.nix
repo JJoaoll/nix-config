@@ -154,6 +154,7 @@
           enableTreesitter = true;
 
           clang.enable = true;
+          rust.enable = true;
           gleam.enable = true;
           elixir.enable = true;
           haskell.enable = true;

@@ -12,5 +12,11 @@
     pkgsUnstable.haskellPackages.cabal-install
     pkgsUnstable.haskellPackages.stack
     pkgsUnstable.haskellPackages.haskell-language-server 
+
+    pkgsUnstable.llvmPackages.bintools
+    pkgsUnstable.cargo
+    pkgsUnstable.rustc
+
+
   ];
 }

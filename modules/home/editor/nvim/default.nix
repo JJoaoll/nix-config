@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: 
 
 let 
-  nvim_dir_config = "/etc/nixos/home/editor/nvim/config";
+  nvim_dir_config = "/etc/nixos/modules/home/editor/nvim/config";
 in {
   programs.neovim = {
     enable = true;

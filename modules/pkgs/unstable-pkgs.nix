@@ -16,6 +16,7 @@
     pkgsUnstable.llvmPackages.bintools
     pkgsUnstable.cargo
     pkgsUnstable.rustc
+    pkgsUnstable.rustup
 
 
   ];

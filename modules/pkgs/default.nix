@@ -22,7 +22,7 @@
     elmPackages.elm
 
     gleam
-    vscode-extensions.gleam.gleam
+    vscode-extensions.gleam.gleam 
     vimPlugins.nvim-treesitter-parsers.gleam
 
     insomnia
@@ -53,7 +53,8 @@
 
     atool
     neovim xclip lua-language-server
-    emacs ripgrep fd clang ispell jansson cmake binutils gnumake libvterm libtool
+    # emacs 
+    ripgrep fd clang ispell jansson cmake binutils gnumake libvterm libtool
     vscode 
     nixpkgs-fmt nixd direnv  
 
@@ -77,7 +78,8 @@
        GLUT
        
    ])) 
-    haskellPackages.GLHUI
+    haskellPackages.GLHUI haskellPackages.alex
+    haskellPackages.GLHUI haskellPackages.happy
 
     xorg.libX11
     xorg.libXft

@@ -87,12 +87,12 @@
           enable = true;
           config = {
             signs = true;
-            # update_in_insert = true;
+            update_in_insert = true;
             # virtual_lines = true;
             virtual_text = true;
 
           };
-          nvim-lint.lint_after_save = true;
+          # nvim-lint.lint_after_save = true;
 
         };
 
@@ -113,7 +113,12 @@
             key = "<leader>ca";
             mode = "n";
             silent = true;
-            action = ":lua require('telescope.builtin').lsp_code_actions()<CR>";
+            # action = ":Telescope code_actions<CR>";
+            # action = ":lua require('telescope.builtin').code_actions()<CR>";
+            # action = ":lua require('telescope.builtin').code_actions()<CR>";
+            # action = ":lua vim.lsp.buf.code_action()<CR>";
+            # action = ":Telescope code_actions<CR>";
+            action = ":lua vim.lsp.buf.code_action()<CR>";
           }
 
           {
@@ -128,6 +133,13 @@
             mode = "n";
             silent = true;
             action = ":Neotree filesystem close left<CR>";
+          }
+
+          {
+            key = "<leader>d";
+            mode = "n";
+            silent = true;
+            action = ":lua vim.diagnostic.open_float()<CR>";
           }
 
           {
@@ -153,6 +165,7 @@
           enableFormat = true;
           enableTreesitter = true;
 
+          assembly.lsp.enable = true;
           clang.enable = true;
           rust.enable = true;
           gleam.enable = true;
@@ -178,6 +191,15 @@
 
         telescope = {
           enable = true;
+
+          # extensions = [
+          #   {
+          #     name = "code_actions"; 
+          #     # packages = [ pkgs.vimPlugins.telescope-code-actions-nvim ];
+          #     packages = [ pkgs.vimPlugins.telescope-code-actions ];
+          #   }
+          # ];
+
         };
 
         filetree.neo-tree = {

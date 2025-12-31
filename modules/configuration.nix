@@ -11,10 +11,9 @@
       ./audio
       ./pkgs
       ./i3
+      ./xmonad
       ./keyboard
       ./nvim
-
-      # ./cosmic -- not running
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -71,6 +70,7 @@
   
     environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATH = "${pkgs.gamescope}/bin";
+      XDG_CONFIG_HOME = "$HOME/.config";
       GDK_BACKEND = "x11";
     };
   
@@ -139,6 +139,7 @@
     hardware.opentabletdriver.enable = true;
     hardware.opentabletdriver.daemon.enable = true;
     # -----------------------------------------------------------------
+
   
 
 

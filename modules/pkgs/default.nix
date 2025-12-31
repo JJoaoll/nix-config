@@ -18,6 +18,7 @@
     # ocamlPackages.utop
 
     # am i using this?
+    
     exercism
     elmPackages.elm
 
@@ -69,6 +70,13 @@
     gcc
     elan z3
     python3
+
+
+    haskellPackages.ghc       
+    haskellPackages.cabal-install
+    haskellPackages.stack
+    haskellPackages.haskell-language-server 
+
     (haskellPackages.ghcWithPackages (p:
        
        with p; [

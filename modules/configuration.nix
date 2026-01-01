@@ -12,7 +12,9 @@
       ./pkgs
       ./i3
       ./xmonad
-      ./keyboard
+      ./unicode
+      # ./keyboard
+      ./kanata
       ./nvim
     ];
 

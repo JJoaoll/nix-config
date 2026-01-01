@@ -1,5 +1,6 @@
 { pkgs, nixpkgs-unstable, ... }: {
 
+  # TODO: REMOVE THE BAT ALIAS
   imports = [
     ./unstable-pkgs.nix
   ];
@@ -48,9 +49,116 @@
     # Terminal 
     #im-config
     lsd tree bat tldr
-    zellij
 
-    yazi
+    # TUI 
+  smassh typioca # try to write fast
+
+    ugm          # info about UNIX things in ur machine
+    # bluetuithS # bluetooth manager
+    gitu lazygit # deals with git stuff 
+    tig          # text-mode interface for git  
+    meteor-git   # write convencional commits
+    gitui        # TUI for git written in rust
+    mani         # manages multiple repositories
+    git-who      # git blame for file trees
+    gh-dash      # interactive github dashboard 
+
+    sshs         # terminal user interface for SSH
+    ggh          # recall ur ssh sessions
+
+    flamelens    # future uses for watch performance
+    atop btop    # monitor for linux systems (btop is 🤌)
+
+    lazyjournal  # jornalctl TUI (logs)
+    hwatch       # better `watch`
+
+    gtrash       # interact with trash
+    s-tui        # CPU stress and monitoring utility
+
+    # havn       # A fast configurable port scanner with reasonable defaults.
+    lazysql      # bad-database management tool
+    rainfrog     # the same but for postgres
+    harlequin    # sql IDEIDE  for terminal
+    gobang       # more database stuff  
+
+    vifm         # file manager with curses interface
+    netop        # network topology visualizer (not working quite well)
+    bmon         # network bandwidth monitor and rate estimator in a human way
+    slurm-nm     # realtime traffic statistics for network interfaces
+
+    slumber      # no insomnia here
+    atac         # no postman here
+    goaccess     # real-time web log analyzer and interactive viewer
+    posting      # a powerful HTTP client that lives in your terminal.
+
+    mdns-scanner # scan a network and create a list of IPs and awssociated hostnames
+    mitmproxy    # a TLS/SSL-capable interception HTTP proxy.
+    httplab      # Inspect HTTP requests and mock their responses in the terminal.
+
+    tldr         # to long dont read
+
+ taskwarrior-tui # TODO: learn it..
+    hours        # another task controller but it take the time in count
+    dijo         # scriptable, curses-bases, HABIT checker!
+    nap          # snippets including code! ❤ 
+    rucola       # markdown note manager!
+    frogmouth    # another markdown browser 
+    calcure      # customizable calendar and task manager
+    cmus         # console music player for Unix-like OSs
+    castero      # podcast client
+
+    wiper        # disk analyser and cleanup tool
+    sttr         # useless CLI/TUI for performing string transformations..
+    fx           # JSON visualizer
+    otree        # JSON/YAML/TOML visualizer
+
+    rexi         # pipe a file and then test regexs
+    oxker        # view and control docker containers
+    dry          # docker manager
+    dive         # explore each layer in a docker image
+
+    tre          # alternative to tree
+    zellij       # alternative to tmux 
+    yazi         # alternative to ranger
+    regname      # (rename things in the right way) mass rename written in Rust
+
+    blink        # blink is a tiny virtual machine for running x86-64 Linux binaries on various POSIX systems.
+    fq           # useless. Its just for binary things
+    heh          # terminal UI to edit bytes by the nibble
+
+
+    crates-tui   # TUI for exploring crates.io
+
+    tz           # A terminal based timezone helper
+    # atuin looks cool but to use it..
+    # cava only with alsa
+
+
+    tdf          # pure pdf viewer
+
+
+    slides       # never canva again
+    aerc         # email client
+    youtube-tui  # not working why?
+
+
+    porsmo       # simple and bad pomodoro TODO: do a better one
+    mapscii      # the world map
+
+
+
+    ## look up
+    zoxide dua jless
+    trippy broot nix-tree
+
+
+
+
+
+
+
+
+
 
     atool
     neovim xclip lua-language-server
@@ -148,3 +256,6 @@
 
 
 }
+
+
+# pacakge urself: wiremix, Gmail-TUi, youtube music??

@@ -120,8 +120,7 @@
   { out ="😗🎶";seq = "inno";        }
 
   #needed
-  { out ="\\";seq = "\\\\";        }
-  { out ="\\";seq = "\\ ";        }
+  # { out = "\\" ;seq = "";             }
   #math
 
 ]

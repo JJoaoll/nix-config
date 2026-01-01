@@ -1,3 +1,7 @@
+(defalias 
+  zellik (tap-hold-press 300 300 f13 (layer-toggle zellij-layer))
+  z-ext  (tap-hold-press 300 300 f13 (layer-toggle zellij-extra))
+)
 
 (defsrc 
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  del   
@@ -14,19 +18,41 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ralt  pgup
   esc  a    s    d    f    g    h    j    k    l    ;    '    ret        pgdn
   lsft z    x    c    v    b    n    m    ,    .    /    rsft     up     end
-  lctl lalt lmet          spc            f13   rmet rctl    left  down  right
+  lctl lalt lmet          spc         @zellik rmet rctl    left  down  right
 )
 
-;;(deflayer main
-;;  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  del   
-;;  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home 
-;;  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     pgup
-;;  esc  a    s    d    f    g    h    j    k    l    ;    '    ret        pgdn
-;;  lsft z    x    c    v    b    n    m    ,    .    /    rsft     up     end
-;;  lctl lalt lmet spc            ralt rmet rctl    left  down  right
-;;)
+(deflayermap (zellij-layer)
+  / @z-ext
+  ;; Note que adicionei 'env XDG_RUNTIME_DIR=...' e '-s main'
+  n     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action new-pane)
+  d     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action new-pane --direction down)
+  r     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action new-pane --direction right)
+  x     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action close-pane)
+  j     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus left)
+  k     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus down)
+  l     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus up)
+  ;     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus right)
+  left  (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus left)
+  down  (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus down)
+  up    (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus up)
+  right (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action move-focus right)
+  f     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action toggle-fullscreen)
+  =     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action resize increase)
+  -     (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action resize decrease)
+)
 
-;;(deflayermap (base-layer)
-;;  caps esc 
-;;  lalt lmet lmet lalt
-;;  )
+(deflayermap (zellij-extra)
+  t (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action new-tab)
+  x (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action close-tab)
+  j (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-previous-tab)
+  ; (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-next-tab)
+  1 (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-tab 1)
+  2 (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-tab 2)
+  3 (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-tab 3)
+  4 (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action go-to-tab 4)
+  r (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action switch-mode renametab)
+  u (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action page-scroll-up)
+  d (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action page-scroll-down)
+  e (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action edit-scrollback)
+  q (cmd runuser -u jjoaoll -- env XDG_RUNTIME_DIR=/run/user/1000 zellij -s main action detach)
+)

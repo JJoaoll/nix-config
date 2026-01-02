@@ -1,7 +1,7 @@
 (defalias 
   fsft  (multi rsft (layer-while-held backslash-fix))
 
-  xhyper f24
+  xhyper (one-shot 250 f24)
   zellik (tap-hold-press 300 300 f13 (layer-toggle zellij-layer))
 
   ;; z-ext  (tap-hold-press 300 300 f13 (layer-toggle zellij-extra))

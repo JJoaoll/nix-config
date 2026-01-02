@@ -2,9 +2,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us-hyper"; # Vamos usar o nome que criaremos abaixo
-
-    # ... suas outras configs ...
+    layout = "us-hyper"; 
 
     extraLayouts.us-hyper = {
       description = "US layout with Hyper Key on 202";
@@ -53,7 +51,6 @@
     enable = true;
     # ... outras configs ...
 
-    # AQUI DENTRO!
     displayManager.sessionCommands = ''
       ${pkgs.xorg.xmodmap}/bin/xmodmap -e 'keycode 202 = Hyper_L' -e 'clear mod3' -e 'add mod3 = Hyper_L'
     '';

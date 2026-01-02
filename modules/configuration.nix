@@ -13,7 +13,6 @@
       ./i3
       ./xmonad
       ./unicode
-      # ./keyboard
       ./kanata
       ./nvim
     ];

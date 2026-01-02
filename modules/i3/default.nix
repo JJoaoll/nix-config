@@ -3,9 +3,6 @@
   services = { 
     displayManager = { 
       sddm.enable = false;
-     # sddm.wayland = false;
-
-      defaultSession = "none+i3";
     };
 
     xserver = {

@@ -1,6 +1,9 @@
 (defalias 
-  fsft (multi rsft (layer-while-held backslash-fix))
+  fsft  (multi rsft (layer-while-held backslash-fix))
+
+  xhyper f24
   zellik (tap-hold-press 300 300 f13 (layer-toggle zellij-layer))
+
   ;; z-ext  (tap-hold-press 300 300 f13 (layer-toggle zellij-extra))
 )
 
@@ -19,20 +22,15 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ralt  pgup
   esc  a    s    d    f    g    h    j    k    l    ;    '    ret        pgdn
   lsft z    x    c    v    b    n    m    ,    .    /   @fsft     up     end
-  lctl lalt lmet          spc         @zellik rmet rctl    left  down  right
+  lctl lalt @xhyper       spc         @zellik lalt rctl    left  down  right
 )
 
+;;TODO: improve this garbage!
 (deflayermap (backslash-fix)
   \ S-\)
 
 (deflayermap (zellij-layer)
-  \ \ 
-  n f13
-  d f14
-  r f15 
-  x f16 
-  j f17  k f18  l f19  ; f20
-  f f21  = f22  - f23  + f24
-)
+  \ \)
+
 
 

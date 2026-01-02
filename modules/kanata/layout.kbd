@@ -1,6 +1,6 @@
 (defalias 
   fsft   (multi rsft (layer-while-held backslash-fix))
-  zellik (multi lmet 300 300 f13 (layer-toggle zellij-layer))
+  zellik (multi lmet (layer-while-held zellij-layer))
   xhyper (one-shot 250 f24)
 )
 

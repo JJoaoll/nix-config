@@ -12,6 +12,7 @@
     pkgsUnstable.sbcl
 
     pkgsUnstable.osu-lazer-bin
+    #
     # pkgsUnstable.haskellPackages.ghc       
     # pkgsUnstable.haskellPackages.cabal-install
     # pkgsUnstable.haskellPackages.stack

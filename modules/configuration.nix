@@ -93,14 +93,23 @@
       enable = true;
       extraPortals = with pkgs; [ 
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
       ];
+      config.common.default = "gnome";
     };
+
     environment.systemPackages = with pkgs; [
         flatpak
         flatpak-builder
         gnome-software
         appstream
         appstream-glib
+
+        # wine
+        wineWowPackages.stable 
+        winetricks # fonts and extra dlls
+        bottles    # gui
+        lutris     # gamming 
     ];
     # GTK THINGS
   
@@ -127,11 +136,14 @@
     # -----------------------------------------------------------------
   
     hardware.graphics = {
+     enable = true;
      enable32Bit = true;
       extraPackages32 = with pkgs; [
         libva
         pkgsi686Linux.libvdpau
         pkgsi686Linux.mesa
+
+        nvidia-vaapi-driver
       ];
   
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];

@@ -55,7 +55,7 @@
 
     ugm          # info about UNIX things in ur machine
     # bluetuithS # bluetooth manager
-    gitu lazygit # deals with git stuff 
+    gitu lazygit # deals with git stuff # git is inpired by magit
     tig          # text-mode interface for git  
     meteor-git   # write convencional commits
     gitui        # TUI for git written in rust
@@ -97,7 +97,7 @@
 
     tldr         # to long dont read
 
- taskwarrior-tui # TODO: learn it..
+    taskwarrior-tui # TODO: learn it..
     hours        # another task controller but it take the time in count
     dijo         # scriptable, curses-bases, HABIT checker!
     nap          # snippets including code! ❤ 
@@ -117,7 +117,7 @@
     dry          # docker manager
     dive         # explore each layer in a docker image
 
-    tre          # alternative to tree
+    tre-command  # alternative to tree
     zellij       # alternative to tmux 
     yazi         # alternative to ranger
     regname      # (rename things in the right way) mass rename written in Rust
